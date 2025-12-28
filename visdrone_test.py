@@ -1,4 +1,3 @@
-# #coding: utf-8
 # from ultralytics import YOLO
 # import matplotlib
 # matplotlib.use( "TkAgg")
@@ -14,20 +13,13 @@
 #
 #
 
+
 from ultralytics import YOLO
-import matplotlib
 
 # 加载模型
-model = YOLO('23281147pbh_Weight/yolov8m_visdrone_scratch/weights/best.pt')
+model = YOLO("23281147pbh_Weight/yolov8m_visdrone_scratch/weights/best.pt")
 
-results = model.val(
-    data='VisDrone.yaml',
-    split='test',
-    batch=1,
-    device='cpu',
-    imgsz=640,
-    verbose=False
-)
+results = model.val(data="VisDrone.yaml", split="test", batch=1, device="cpu", imgsz=640, verbose=False)
 
 cpu_time = sum(results.speed.values())
 print(f"CPU Time: {cpu_time:.2f} ms/image")
