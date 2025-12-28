@@ -11,9 +11,9 @@
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 path: /root/autodl-tmp/COCO2017
 
-train: images/train2017   # 训练集文件夹
-val: images/val2017       # 验证集文件夹
-test: images/test2017     # 测试集文件夹（可选）
+train: images/train2017 # 训练集文件夹
+val: images/val2017 # 验证集文件夹
+test: images/test2017 # 测试集文件夹（可选）
 
 # Classes
 names:
@@ -97,5 +97,3 @@ names:
   77: teddy bear
   78: hair drier
   79: toothbrush
-
-
