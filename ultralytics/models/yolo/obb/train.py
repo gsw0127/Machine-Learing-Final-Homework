@@ -14,8 +14,8 @@ from ultralytics.utils import DEFAULT_CFG, RANK
 class OBBTrainer(yolo.detect.DetectionTrainer):
     """A class extending the DetectionTrainer class for training based on an Oriented Bounding Box (OBB) model.
 
-    This trainer specializes in training YOLO models that visdrone_detect oriented bounding boxes, which are useful for detecting
-    objects at arbitrary angles rather than just axis-aligned rectangles.
+    This trainer specializes in training YOLO models that visdrone_detect oriented bounding boxes, which are useful for
+    detecting objects at arbitrary angles rather than just axis-aligned rectangles.
 
     Attributes:
         loss_names (tuple): Names of the loss components used during training including box_loss, cls_loss, and

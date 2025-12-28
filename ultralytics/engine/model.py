@@ -1016,7 +1016,13 @@ class Model(torch.nn.Module):
             (dict): A new dictionary containing only the specified include keys from the input arguments.
 
         Examples:
-            >>> original_args = {"imgsz": 640, "data": "coco.yaml", "task": "visdrone_detect", "batch": 16, "epochs": 100}
+            >>> original_args = {
+            ...     "imgsz": 640,
+            ...     "data": "coco.yaml",
+            ...     "task": "visdrone_detect",
+            ...     "batch": 16,
+            ...     "epochs": 100,
+            ... }
             >>> reset_args = Model._reset_ckpt_args(original_args)
             >>> print(reset_args)
             {'imgsz': 640, 'data': 'coco.yaml', 'task': 'visdrone_detect'}

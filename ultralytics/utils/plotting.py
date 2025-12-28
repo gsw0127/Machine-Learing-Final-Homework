@@ -1010,7 +1010,9 @@ def plot_tune_results(csv_file: str = "tune_results.csv", exclude_zero_fitness_p
 
 
 @plt_settings()
-def feature_visualization(x, module_type: str, stage: int, n: int = 32, save_dir: Path = Path("runs/visdrone_detect/exp")):
+def feature_visualization(
+    x, module_type: str, stage: int, n: int = 32, save_dir: Path = Path("runs/visdrone_detect/exp")
+):
     """Visualize feature maps of a given model module during inference.
 
     Args:
