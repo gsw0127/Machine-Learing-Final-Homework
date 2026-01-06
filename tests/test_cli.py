@@ -50,7 +50,9 @@ def test_export(model: str) -> None:
 
 
 @pytest.mark.skipif(not TORCH_1_11, reason="RTDETR requires torch>=1.11")
-def test_rtdetr(task: str = "visdrone_detect", model: Path = WEIGHTS_DIR / "rtdetr-l.pt", data: str = "coco8.yaml") -> None:
+def test_rtdetr(
+    task: str = "visdrone_detect", model: Path = WEIGHTS_DIR / "rtdetr-l.pt", data: str = "coco8.yaml"
+) -> None:
     """Test the RTDETR functionality within Ultralytics for detection tasks using specified model and data."""
     # Add comma, spaces, fraction=0.25 args to test single-image training
     run(f"yolo predict {task} model={model} source={ASSETS / 'bus.jpg'} imgsz=160 save save_crop save_txt")
