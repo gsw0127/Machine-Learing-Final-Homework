@@ -319,7 +319,9 @@ class YOLOMultiModalDataset(YOLODataset):
         build_transforms: Enhance data transformations with text augmentation.
 
     Examples:
-        >>> dataset = YOLOMultiModalDataset(img_path="path/to/images", data={"names": {0: "person"}}, task="visdrone_detect")
+        >>> dataset = YOLOMultiModalDataset(
+        ...     img_path="path/to/images", data={"names": {0: "person"}}, task="visdrone_detect"
+        ... )
         >>> batch = next(iter(dataset))
         >>> print(batch.keys())  # Should include 'texts'
     """
@@ -433,7 +435,9 @@ class GroundingDataset(YOLODataset):
             *args (Any): Additional positional arguments for the parent class.
             **kwargs (Any): Additional keyword arguments for the parent class.
         """
-        assert task in {"visdrone_detect", "segment"}, "GroundingDataset currently only supports `visdrone_detect` and `segment` tasks"
+        assert task in {"visdrone_detect", "segment"}, (
+            "GroundingDataset currently only supports `visdrone_detect` and `segment` tasks"
+        )
         self.json_file = json_file
         self.max_samples = max_samples
         super().__init__(*args, task=task, data={"channels": 3}, **kwargs)

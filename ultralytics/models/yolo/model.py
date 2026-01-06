@@ -58,8 +58,8 @@ class YOLO(Model):
 
         Args:
             model (str | Path): Model name or path to model file, i.e. 'yolo11n.pt', 'yolo11n.yaml'.
-            task (str, optional): YOLO task specification, i.e. 'visdrone_detect', 'segment', 'classify', 'pose', 'obb'. Defaults
-                to auto-detection based on model.
+            task (str, optional): YOLO task specification, i.e. 'visdrone_detect', 'segment', 'classify', 'pose', 'obb'.
+                Defaults to auto-detection based on model.
             verbose (bool): Display model info on load.
         """
         path = Path(model if isinstance(model, (str, Path)) else "")
@@ -121,9 +121,9 @@ class YOLO(Model):
 class YOLOWorld(Model):
     """YOLO-World object detection model.
 
-    YOLO-World is an open-vocabulary object detection model that can visdrone_detect objects based on text descriptions without
-    requiring training on specific classes. It extends the YOLO architecture to support real-time open-vocabulary
-    detection.
+    YOLO-World is an open-vocabulary object detection model that can visdrone_detect objects based on text descriptions
+    without requiring training on specific classes. It extends the YOLO architecture to support real-time
+    open-vocabulary detection.
 
     Attributes:
         model: The loaded YOLO-World model instance.
@@ -422,7 +422,9 @@ class YOLOE(Model):
             if refer_image is not None:
                 vpe = self.predictor.get_vpe(refer_image)
                 self.model.set_classes(self.model.names, vpe)
-                self.task = "segment" if isinstance(self.predictor, yolo.segment.SegmentationPredictor) else "visdrone_detect"
+                self.task = (
+                    "segment" if isinstance(self.predictor, yolo.segment.SegmentationPredictor) else "visdrone_detect"
+                )
                 self.predictor = None  # reset predictor
         elif isinstance(self.predictor, yolo.yoloe.YOLOEVPDetectPredictor):
             self.predictor = None  # reset predictor if no visual prompts
