@@ -216,7 +216,7 @@ results.print()  # or .show(), .save(), .crop(), .pandas(), etc.
 python export.py --weights yolov5s.pt --include onnx
 
 python visdrone_detect.py --weights yolov5s.onnx --dnn # visdrone_detect
-python val.py --weights yolov5s.onnx --dnn    # validate
+python val.py --weights yolov5s.onnx --dnn             # validate
 ```
 
 ## C++ Inference

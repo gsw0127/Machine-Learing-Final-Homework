@@ -32,7 +32,11 @@ MCT_CONFIG = {
         "segment": {"layer_names": ["sub", "mul_2", "add_14", "cat_22"], "weights_memory": 2466604.8, "n_layers": 265},
     },
     "YOLOv8": {
-        "visdrone_detect": {"layer_names": ["sub", "mul", "add_6", "cat_17"], "weights_memory": 2550540.8, "n_layers": 168},
+        "visdrone_detect": {
+            "layer_names": ["sub", "mul", "add_6", "cat_17"],
+            "weights_memory": 2550540.8,
+            "n_layers": 168,
+        },
         "pose": {
             "layer_names": ["add_7", "mul_2", "cat_19", "mul", "sub", "add_6", "cat_18"],
             "weights_memory": 2482451.85,

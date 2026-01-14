@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
-from pycocotools.coco import COCO
 import os
+
+from pycocotools.coco import COCO
 
 # 数据集路径
 coco_root = "/root/autodl-tmp/COCO2017"
@@ -47,8 +48,8 @@ for dataType in ["train2017", "val2017"]:
                 bbox = ann["bbox"]  # [x, y, w, h]
                 cls_id = cls_dict[ann["category_id"]]
 
-                x_c = (bbox[0] + bbox[2]/2.0) * dw
-                y_c = (bbox[1] + bbox[3]/2.0) * dh
+                x_c = (bbox[0] + bbox[2] / 2.0) * dw
+                y_c = (bbox[1] + bbox[3] / 2.0) * dh
                 w = bbox[2] * dw
                 h = bbox[3] * dh
 
